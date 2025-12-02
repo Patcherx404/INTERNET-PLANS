@@ -4,41 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8" />
   <title>Internet Plans Flier</title>
-  <style>
-    body{margin:0;font-family:Inter,Arial;background:#1a0000;color:#fff;display:flex;justify-content:center;padding:20px;position:relative;overflow:hidden}
-
-    /* rotating earth background */
-    body::before{
-      content:"";
-      position:absolute;
-      top:50%;left:50%;
-      width:900px;height:900px;
-      background:url('earth.png') no-repeat center/cover;
-      opacity:0.12;
-      transform:translate(-50%,-50%);
-      animation:spin 80s linear infinite;
-      pointer-events:none;
-      filter:drop-shadow(0 0 20px rgba(255,0,0,0.4));
-    }
-    @keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-
-    .flyer{width:420px;background:rgba(70,0,0,0.6);backdrop-filter:blur(6px);padding:24px;border-radius:18px;box-shadow:0 8px 30px rgba(255,0,0,0.4);text-align:center;position:relative;z-index:2}
-    h1{margin:0 0 6px;font-size:26px;font-weight:700;color:#ff4d4d;text-shadow:0 0 12px rgba(255,0,0,0.5)}
-    p{margin:0;color:#ffb3b3;font-size:14px}
-
-    .plans{margin-top:20px;display:flex;flex-direction:column;gap:14px}
-    .card{background:#330000;padding:16px;border-radius:14px;box-shadow:0 4px 14px rgba(255,0,0,0.35);border:1px solid rgba(255,60,60,0.4)}
-    .price{font-size:28px;font-weight:800;color:#ff4d4d;text-shadow:0 0 10px rgba(255,0,0,0.7)}
-    .speed{font-size:20px;font-weight:600;margin-top:4px;color:#ffcccc}
-
-    .note{margin-top:16px;font-size:13px;color:#ff9999}
-    .footer{margin-top:22px;font-size:13px;color:#ff8080}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="flyer">
     <h1>HOTFAST PH</h1>
-    <p>High‑Speed Internet Plans</p>
+    <p>High-Speed Internet Plans</p>
 
     <div class="plans">
       <div class="card">
@@ -56,54 +27,31 @@
         <div class="speed">Up to 150 Mbps</div>
       </div>
     </div>
-<button id="autoFB" class="fb-btn">Redirecting in 10s...</button>
 
-<script>
-  let timeLeft = 20;
-  const btn = document.getElementById("autoFB");
-  const fbLink = "https://www.facebook.com/AFKllPatcher/";
+    <button id="autoFB" class="fb-btn">Redirecting in 20s...</button>
 
-  const timer = setInterval(() => {
-    timeLeft--;
-    btn.textContent = "Redirecting in facebook Page " + timeLeft + "s...";
+    <script>
+      let timeLeft = 20;
+      const btn = document.getElementById("autoFB");
+      const fbLink = "https://www.facebook.com/AFKllPatcher/";
 
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-      window.location.href = fbLink;
-    }
-  }, 1000);
+      const timer = setInterval(() => {
+        timeLeft--;
+        btn.textContent = "Redirecting to Facebook Page " + timeLeft + "s...";
 
-  // Manual click redirect
-  btn.addEventListener("click", () => {
-    window.location.href = fbLink;
-  });
-</script>
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          window.location.href = fbLink;
+        }
+      }, 1000);
+
+      btn.addEventListener("click", () => {
+        window.location.href = fbLink;
+      });
+    </script>
+
     <div class="note">Stable • Fast • Reliable Fiber-Backed Connection</div>
-    
   </div>
-
-  <style>
-    .fb-btn{
-      display:block;
-      margin:20px auto 0;
-      padding:12px 20px;
-      background:#ff1a1a;
-      color:skyblue;
-      font-weight:700;
-      text-decoration:none;
-      border-radius:10px;
-      box-shadow:0 0 12px rgba(255,0,0,0.6);
-      transition:0.2s;
-      width:80%;
-    }
-    .fb-btn:hover{background:blue;transform:scale(1.03)}
-    
-    
-  </style>
-</div>
 </body>
 </html>
-
-
-
 
