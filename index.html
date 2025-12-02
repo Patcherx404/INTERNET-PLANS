@@ -56,9 +56,30 @@
         <div class="speed">Up to 150 Mbps</div>
       </div>
     </div>
+<button id="autoFB" class="fb-btn">Redirecting in 10s...</button>
 
+<script>
+  let timeLeft = 20;
+  const btn = document.getElementById("autoFB");
+  const fbLink = "https://www.facebook.com/AFKllPatcher/";
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    btn.textContent = "Redirecting in facebook Page " + timeLeft + "s...";
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      window.location.href = fbLink;
+    }
+  }, 1000);
+
+  // Manual click redirect
+  btn.addEventListener("click", () => {
+    window.location.href = fbLink;
+  });
+</script>
     <div class="note">Stable • Fast • Reliable Fiber-Backed Connection</div>
-    <div class="footer">Message us on Facebook: HOTFAST PH    <a href="https://www.facebook.com/AFKllPatcher/" target="_blank" class="fb-btn">Visit Our Facebook Page</a>
+    
   </div>
 
   <style>
@@ -76,6 +97,8 @@
       width:80%;
     }
     .fb-btn:hover{background:blue;transform:scale(1.03)}
+    
+    
   </style>
 </div>
 </body>
